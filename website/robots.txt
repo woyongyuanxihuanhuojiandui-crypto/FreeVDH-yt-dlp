@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freevdh-yt-dlp.netlify.app/sitemap.xml
