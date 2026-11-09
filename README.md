@@ -45,6 +45,7 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 4. 打开 Chrome 扩展程序管理页面（`chrome://extensions`），启用**开发者模式**，点击 **“加载未打包的扩展程序”**。
 5. 选择解压好的 **FreeVDH-yt-dlp** 文件夹。
 6. 双击文件夹内的 **“安装 FreeVDH yt-dlp 桥接组件”**，完成桥接组件安装。
+
 特别提示：桥接组件已内置 yt-dlp 下载引擎，用户无需单独下载或配置 yt-dlp。
 
 ### 为什么需要安装桥接组件？
