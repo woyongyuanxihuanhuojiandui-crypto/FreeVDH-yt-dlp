@@ -1278,7 +1278,7 @@ var ze = {
         account_title: "Account",
         one_hundred_downloads_title: "You've downloaded 100 videos!",
         leave_review_description:
-          "We hope you're enjoying FreeVDH :) Would you mind writing a nice review on the addon website?",
+          "We hope you're enjoying FreeVDH-yt-dlp :) Would you mind writing a nice review on the addon website?",
         leave_review_button: "Leave a review",
         account_status: "Status",
         account_status_premium: "Premium ($1)",
@@ -1299,7 +1299,7 @@ var ze = {
         download_subdirectory: "Download subdirectory",
         private_browsing_title: "Private browsing",
         private_browsing_warning:
-          "FreeVDH is not enabled in a Private/Incognito windows. You need to turn on that option manually (this is not required).",
+          "FreeVDH-yt-dlp is not enabled in a Private/Incognito windows. You need to turn on that option manually (this is not required).",
         private_browsing_notifications: "Show notification for private downloads",
         private_browsing_button: "Change private browsing setting",
         throttle_youtube: "Throttle YouTube (slower downloads, but less likely to be blocked)",
@@ -1344,7 +1344,7 @@ var ze = {
         order_media_by_oldest: "Oldest first",
         history_title: "Download History",
         history_warning:
-          "We do not record your download history. Do you want FreeVDH to remember your download history?",
+          "We do not record your download history. Do you want FreeVDH-yt-dlp to remember your download history?",
         history_warning_2: "Don't worry, everything stays on your machine. We value your privacy.",
         enable_history: "Enable History",
         clear_history: "Clear History",
@@ -1410,7 +1410,7 @@ var ze = {
         issue_just_digit: "Enter the 6 digit code we sent you:",
         issue_i_have_a_code: "(Click here if you already have a code)",
         issue_i_have_a_key: "(Click here if you have a license key)",
-        issue_key: "Enter your FreeVDH license key:",
+        issue_key: "Enter your FreeVDH-yt-dlp license key:",
         landing_text1: "Download any video from any websites, it just works!",
         landing_text2: "1000+ websites supported",
         landing_text3: "Trusted by 7 millions users",
@@ -1431,7 +1431,7 @@ var ze = {
         landing_feature4_description:
           "Extract audio from videos, converting them into MP3s or podcasts for easy listening.",
         premium_hero1: "Pay once, use forever",
-        premium_hero2: "Get a Lifetime License for FreeVDH",
+        premium_hero2: "Get a Lifetime License for FreeVDH-yt-dlp",
         premium_hero3: "Download any videos as much as you want, no limits.",
         premium_supported_payment_methods: "Supported payment methods",
         premium_buy: "buy",
@@ -1466,7 +1466,7 @@ var ze = {
         complete_title: "\u5B8C\u4E86",
         hide_complete_button: "\u975E\u8868\u793A",
         translate_button_tooltip:
-          "FreeVDH\u306E\u7FFB\u8A33\u306B\u3054\u5354\u529B\u4E0B\u3055\u3044",
+          "FreeVDH-yt-dlp\u306E\u7FFB\u8A33\u306B\u3054\u5354\u529B\u4E0B\u3055\u3044",
         help_button_tooltip: "\u30D8\u30EB\u30D7",
         open_source_tab_button_tooltip: "\u30BD\u30FC\u30B9\u30BF\u30D6\u3092\u958B\u304F",
         retry_download_button_tooltip: "\u518D\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9",
@@ -1486,7 +1486,7 @@ var ze = {
         one_hundred_downloads_title:
           "100\u672C\u306E\u52D5\u753B\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3057\u307E\u3057\u305F\uFF01",
         leave_review_description:
-          "FreeVDH \u3092\u304A\u697D\u3057\u307F\u3044\u305F\u3060\u3051\u308C\u3070\u5E78\u3044\u3067\u3059 :) \u30A2\u30C9\u30AA\u30F3 Web \u30B5\u30A4\u30C8\u306B\u7D20\u6575\u306A\u30EC\u30D3\u30E5\u30FC\u3092\u66F8\u3044\u3066\u3044\u305F\u3060\u3051\u307E\u305B\u3093\u304B?",
+          "FreeVDH-yt-dlp \u3092\u304A\u697D\u3057\u307F\u3044\u305F\u3060\u3051\u308C\u3070\u5E78\u3044\u3067\u3059 :) \u30A2\u30C9\u30AA\u30F3 Web \u30B5\u30A4\u30C8\u306B\u7D20\u6575\u306A\u30EC\u30D3\u30E5\u30FC\u3092\u66F8\u3044\u3066\u3044\u305F\u3060\u3051\u307E\u305B\u3093\u304B?",
         leave_review_button: "\u30EC\u30D3\u30E5\u30FC\u3059\u308B",
         account_status: "\u30B9\u30C6\u30FC\u30BF\u30B9",
         account_status_premium: "\u30D7\u30EC\u30DF\u30A2\u30E0 ($1)",
@@ -1512,7 +1512,7 @@ var ze = {
         private_browsing_title:
           "\u30D7\u30E9\u30A4\u30D9\u30FC\u30C8\u30D6\u30E9\u30A6\u30BA\u30E2\u30FC\u30C9",
         private_browsing_warning:
-          "FreeVDH\u306F \u30D7\u30E9\u30A4\u30D9\u30FC\u30C8/\u30B7\u30FC\u30AF\u30EC\u30C3\u30C8 \u30A6\u30A3\u30F3\u30C9\u30A6\u3067\u6709\u52B9\u5316\u3055\u308C\u307E\u305B\u3093\u3002\u4F7F\u7528\u3059\u308B\u306B\u306F\u3001\u624B\u52D5\u3067\u6709\u52B9\u306B\u3059\u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\uFF08\u5FC5\u9808\u3067\u306F\u3042\u308A\u307E\u305B\u3093\uFF09\u3002",
+          "FreeVDH-yt-dlp\u306F \u30D7\u30E9\u30A4\u30D9\u30FC\u30C8/\u30B7\u30FC\u30AF\u30EC\u30C3\u30C8 \u30A6\u30A3\u30F3\u30C9\u30A6\u3067\u6709\u52B9\u5316\u3055\u308C\u307E\u305B\u3093\u3002\u4F7F\u7528\u3059\u308B\u306B\u306F\u3001\u624B\u52D5\u3067\u6709\u52B9\u306B\u3059\u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\uFF08\u5FC5\u9808\u3067\u306F\u3042\u308A\u307E\u305B\u3093\uFF09\u3002",
         private_browsing_notifications:
           "\u30D7\u30E9\u30A4\u30D9\u30FC\u30C8\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u306E\u901A\u77E5\u3092\u8868\u793A\u3059\u308B",
         private_browsing_button:
@@ -1542,7 +1542,7 @@ var ze = {
         controls_title: "\u64CD\u4F5C",
         show_in_context_menu:
           "\u30DA\u30FC\u30B8\u5185\u3092\u53F3\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u30B3\u30DE\u30F3\u30C9\u306B\u30A2\u30AF\u30BB\u30B9",
-        restart_addon: "FreeVDH\u3092\u518D\u8D77\u52D5\u3059\u308B",
+        restart_addon: "FreeVDH-yt-dlp\u3092\u518D\u8D77\u52D5\u3059\u308B",
         reset_settings: "\u8A2D\u5B9A\u3092\u521D\u671F\u5316",
         prefered_quality: "\u63A8\u5968\u52D5\u753B\u54C1\u8CEA",
         prefered_quality_highest:
@@ -1560,7 +1560,7 @@ var ze = {
         preview_mode_image: "\u753B\u50CF",
         history_title: "\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u5C65\u6B74",
         history_warning:
-          "\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u5C65\u6B74\u306F\u8A18\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002FreeVDH \u3067\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u5C65\u6B74\u3092\u8A18\u9332\u3057\u307E\u3059\u304B\uFF1F",
+          "\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u5C65\u6B74\u306F\u8A18\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002FreeVDH-yt-dlp \u3067\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u5C65\u6B74\u3092\u8A18\u9332\u3057\u307E\u3059\u304B\uFF1F",
         history_warning_2:
           "\u3054\u5B89\u5FC3\u304F\u3060\u3055\u3044\u3002\u30C7\u30FC\u30BF\u306F\u3059\u3079\u3066\u304A\u4F7F\u3044\u306E\u7AEF\u672B\u5185\u306B\u4FDD\u5B58\u3055\u308C\u307E\u3059\u3002\u6211\u3005\u306F\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u3092\u5C0A\u91CD\u3057\u3066\u3044\u307E\u3059\u3002",
         enable_history: "\u5C65\u6B74\u3092\u6709\u52B9\u5316",
@@ -1647,7 +1647,7 @@ var ze = {
         issue_i_have_a_key:
           "(\u30E9\u30A4\u30BB\u30F3\u30B9\u30AD\u30FC\u3092\u304A\u6301\u3061\u306E\u65B9\u306F\u3053\u3053\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u304F\u3060\u3055\u3044)",
         issue_key:
-          "FreeVDH\u306E\u30E9\u30A4\u30BB\u30F3\u30B9\u30AD\u30FC\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\uFF1A",
+          "FreeVDH-yt-dlp\u306E\u30E9\u30A4\u30BB\u30F3\u30B9\u30AD\u30FC\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\uFF1A",
         landing_text1:
           "\u3069\u3093\u306A\u30A6\u30A7\u30D6\u30B5\u30A4\u30C8\u304B\u3089\u3067\u3082\u3001\u3069\u3093\u306A\u30D3\u30C7\u30AA\u3067\u3082\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3067\u304D\u307E\u3059!",
         landing_text2:
@@ -1677,7 +1677,7 @@ var ze = {
           "\u30D3\u30C7\u30AA\u304B\u3089\u30AA\u30FC\u30C7\u30A3\u30AA\u3092\u62BD\u51FA\u3057\u3001MP3\u3084\u30DD\u30C3\u30C9\u30AD\u30E3\u30B9\u30C8\u306B\u7D44\u307F\u8FBC\u3081\u307E\u3059\u3002",
         premium_hero1:
           "\u4E00\u5EA6\u306E\u304A\u652F\u6255\u3044\u3067\u6C38\u4E45\u5229\u7528\u3067\u304D\u307E\u3059",
-        premium_hero2: "FreeVDH\u306E\u6C38\u4E45\u5229\u7528\u3092\u59CB\u3081\u308B",
+        premium_hero2: "FreeVDH-yt-dlp\u306E\u6C38\u4E45\u5229\u7528\u3092\u59CB\u3081\u308B",
         premium_hero3:
           "\u5236\u9650\u306A\u3057\u3067\u3001\u597D\u304D\u306A\u3060\u3051\u52D5\u753B\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3067\u304D\u307E\u3059",
         welcome_text:

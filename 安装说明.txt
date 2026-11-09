@@ -1,12 +1,12 @@
-# FreeVDH + yt-dlp Windows 测试版
+# FreeVDH-yt-dlp Windows 测试版
 
-1. 解压后，在 Chrome 扩展程序页面开启开发者模式，选择“加载已解压的扩展程序”，选择“FreeVDH 扩展”目录。
-2. 运行压缩包根目录中的“安装 FreeVDH yt-dlp 桥接组件.exe”，在系统弹窗中确认安装。安装器会自动识别已加载的 FreeVDH。
-3. 打开视频网页，在 FreeVDH 资源条目的三点菜单中点击“通过 yt-dlp 下载”。下载期间请保持侧栏打开；进度会临时显示在侧栏底部。
+1. 解压后，在 Chrome 扩展程序页面开启开发者模式，选择“加载已解压的扩展程序”，选择“FreeVDH-yt-dlp 扩展”目录。
+2. 运行压缩包根目录中的“安装 FreeVDH yt-dlp 桥接组件.exe”，在系统弹窗中确认安装。安装器会自动识别已加载的 FreeVDH-yt-dlp。
+3. 打开视频网页，在 FreeVDH-yt-dlp 资源条目的三点菜单中点击“通过 yt-dlp 下载”。下载期间请保持侧栏打开；进度会临时显示在侧栏底部。
 
 视频默认保存到 Windows 的下载文件夹，并以 MP4 容器输出；仅重封装，不重新编码。不自动读取浏览器 Cookie。部分网站需要登录或额外运行时，可能无法下载。
 
-本包包含 yt-dlp、FFmpeg、ffprobe 和本地辅助程序，不需要预先安装 Python 或联网获取这些组件。电脑中单独安装的 yt-dlp 不能被 Chrome 扩展直接调用；安装器还会安装并注册 FreeVDH 桥接组件。
+本包包含 yt-dlp、FFmpeg、ffprobe 和本地辅助程序，不需要预先安装 Python 或联网获取这些组件。电脑中单独安装的 yt-dlp 不能被 Chrome 扩展直接调用；安装器还会安装并注册 FreeVDH-yt-dlp 桥接组件。
 
 组件项目及源码：
 - FreeVDH: https://github.com/Atamol/FreeVDH

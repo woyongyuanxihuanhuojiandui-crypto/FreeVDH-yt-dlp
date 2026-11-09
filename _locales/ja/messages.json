@@ -51,7 +51,7 @@
     "message": "非表示"
   },
   "translate_button_tooltip": {
-    "message": "FreeVDHの翻訳にご協力下さい"
+    "message": "FreeVDH-yt-dlpの翻訳にご協力下さい"
   },
   "help_button_tooltip": {
     "message": "ヘルプ"
@@ -96,7 +96,7 @@
     "message": "100本の動画をダウンロードしました！"
   },
   "leave_review_description": {
-    "message": "FreeVDH をお楽しみいただければ幸いです :) アドオン Web サイトに素敵なレビューを書いていただけませんか?"
+    "message": "FreeVDH-yt-dlp をお楽しみいただければ幸いです :) アドオン Web サイトに素敵なレビューを書いていただけませんか?"
   },
   "leave_review_button": {
     "message": "レビューする"
@@ -150,7 +150,7 @@
     "message": "プライベートブラウズモード"
   },
   "private_browsing_warning": {
-    "message": "FreeVDHは プライベート/シークレット ウィンドウで有効化されません。使用するには、手動で有効にする必要があります（必須ではありません）。"
+    "message": "FreeVDH-yt-dlpは プライベート/シークレット ウィンドウで有効化されません。使用するには、手動で有効にする必要があります（必須ではありません）。"
   },
   "private_browsing_notifications": {
     "message": "プライベートダウンロードの通知を表示する"
@@ -219,7 +219,7 @@
     "message": "ページ内を右クリックしてコマンドにアクセス"
   },
   "restart_addon": {
-    "message": "FreeVDHを再起動する"
+    "message": "FreeVDH-yt-dlpを再起動する"
   },
   "reset_settings": {
     "message": "設定を初期化"
@@ -255,7 +255,7 @@
     "message": "ダウンロード履歴"
   },
   "history_warning": {
-    "message": "ダウンロード履歴は記録されていません。FreeVDHでダウンロード履歴を記録しますか？"
+    "message": "ダウンロード履歴は記録されていません。FreeVDH-yt-dlpでダウンロード履歴を記録しますか？"
   },
   "history_warning_2": {
     "message": "ご安心ください。データはすべてお使いの端末内に保存されます。我々はプライバシーを尊重しています。"

@@ -27,15 +27,18 @@ class HostTest(unittest.TestCase):
     def test_stop_process_tree(self):
         self.assertEqual(stop_process_tree_args(42), ['taskkill', '/PID', '42', '/T', '/F'])
 
-    def test_extension_discovery(self):
+    def test_extension_discovery_supports_new_and_legacy_names(self):
         with tempfile.TemporaryDirectory() as directory:
-            extension = Path(directory) / 'FreeVDH extension'
-            extension.mkdir()
-            (extension / 'manifest.json').write_text(json.dumps({'name': 'FreeVDH'}))
             prefs = Path(directory) / 'Default' / 'Preferences'
             prefs.parent.mkdir()
-            extension_ids = ['a' * 32]
-            prefs.write_text(json.dumps({'extensions': {'settings': {extension_ids[0]: {'path': str(extension)}}}}))
+            extension_ids = ['a' * 32, 'b' * 32]
+            settings = {}
+            for extension_id, name in zip(extension_ids, ('FreeVDH-yt-dlp', 'FreeVDH')):
+                extension = Path(directory) / extension_id
+                extension.mkdir()
+                (extension / 'manifest.json').write_text(json.dumps({'name': name}))
+                settings[extension_id] = {'path': str(extension)}
+            prefs.write_text(json.dumps({'extensions': {'settings': settings}}))
             find_extension_ids = getattr(host, 'find_extension_ids', lambda _: [])
             self.assertEqual(find_extension_ids(Path(directory)), extension_ids)
 

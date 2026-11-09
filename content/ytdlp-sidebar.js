@@ -73,7 +73,7 @@
         if (!finished && !stopping) {
           delete card.dataset.sidebarYtdlp;
           card.sidebarSetDownloadIdle();
-          show('未检测到 FreeVDH 桥接组件，请先运行压缩包中的安装程序。', 8000);
+          show('未检测到 FreeVDH-yt-dlp 桥接组件，请先运行压缩包中的安装程序。', 8000);
         } else if (stopping) {
           delete card.dataset.sidebarYtdlp;
           card.sidebarSetDownloadIdle();

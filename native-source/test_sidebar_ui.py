@@ -7,6 +7,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SidebarUiTests(unittest.TestCase):
+    def test_product_name_is_visible_across_extension(self):
+        product = "FreeVDH-yt-dlp"
+        manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
+        sidebar_ui = (ROOT / "content" / "sidebar-ui.js").read_text(encoding="utf-8")
+        english = json.loads((ROOT / "_locales" / "en" / "messages.json").read_text(encoding="utf-8"))
+        japanese = json.loads((ROOT / "_locales" / "ja" / "messages.json").read_text(encoding="utf-8"))
+        app = (ROOT / "native-source" / "app.py").read_text(encoding="utf-8")
+        ytdlp = (ROOT / "content" / "ytdlp-sidebar.js").read_text(encoding="utf-8")
+        translations = (ROOT / "content" / "translate.js").read_text(encoding="utf-8")
+
+        self.assertEqual(manifest["name"], product)
+        self.assertEqual(manifest["action"]["default_title"], product)
+        self.assertEqual(manifest["side_panel"]["default_title"], product)
+        self.assertIn(f'button_show_translate: "协助翻译 {product}"', sidebar_ui)
+        self.assertIn(f'private_browsing_warning: "{product} 尚未在隐私/无痕窗口中启用。', sidebar_ui)
+        self.assertIn(product, english["private_browsing_warning"]["message"])
+        self.assertIn(product, japanese["private_browsing_warning"]["message"])
+        self.assertIn(f"We hope you're enjoying {product}", translations)
+        self.assertIn(f"{product} is not enabled in a Private/Incognito windows", translations)
+        self.assertIn(f"'{product} 安装'", app)
+        self.assertIn(f"未检测到 {product} 桥接组件", ytdlp)
+        for page in ("popup.html", "sidebar.html", "history.html"):
+            html = (ROOT / "content" / page).read_text(encoding="utf-8")
+            self.assertIn(f"<p>{product}: <span id=\"span_version\"></span></p>", html)
+
     def test_sidebar_loads_redesign_without_touching_popup(self):
         sidebar = (ROOT / "content" / "sidebar.html").read_text(encoding="utf-8")
         popup = (ROOT / "content" / "popup.html").read_text(encoding="utf-8")

@@ -1,6 +1,6 @@
 {
   "author": "FreeVDH Team",
-  "name": "FreeVDH",
+  "name": "FreeVDH-yt-dlp",
   "homepage_url": "https://github.com/Atamol/FreeVDH",
   "description": "__MSG_appDesc__",
   "manifest_version": 3,
@@ -34,7 +34,7 @@
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'"
   },
   "action": {
-    "default_title": "FreeVDH",
+    "default_title": "FreeVDH-yt-dlp",
     "default_icon": {
       "128": "bitmaps/logo-128-color.png"
     }
@@ -282,7 +282,7 @@
     }
   ],
   "side_panel": {
-    "default_title": "FreeVDH",
+    "default_title": "FreeVDH-yt-dlp",
     "default_path": "/content/sidebar.html",
     "default_icon": {
       "128": "bitmaps/logo-128-color.png"

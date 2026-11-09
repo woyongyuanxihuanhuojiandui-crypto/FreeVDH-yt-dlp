@@ -45,7 +45,7 @@ def find_extension_ids(user_data):
                     manifest = info.get('manifest')
                     if manifest is None and info.get('path'):
                         manifest = json.loads((Path(info['path']) / 'manifest.json').read_text(encoding='utf-8'))
-                    if re.fullmatch('[a-p]{32}', extension_id) and manifest and manifest.get('name') == 'FreeVDH':
+                    if re.fullmatch('[a-p]{32}', extension_id) and manifest and manifest.get('name') in ('FreeVDH-yt-dlp', 'FreeVDH'):
                         ids.add(extension_id)
             except (OSError, ValueError, AttributeError):
                 continue

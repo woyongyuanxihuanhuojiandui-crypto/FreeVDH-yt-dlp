@@ -100,9 +100,9 @@ def install():
     match = re.search(r'([a-p]{32})', Path(sys.executable).stem)
     extension_ids = [match.group(1)] if match else find_extension_ids(Path(os.environ['LOCALAPPDATA']) / 'Google/Chrome/User Data')
     if not extension_ids:
-        messagebox.showerror('FreeVDH 安装', '未检测到 FreeVDH。请先在 Chrome 中加载扩展，再重新运行安装程序。')
+        messagebox.showerror('FreeVDH-yt-dlp 安装', '未检测到 FreeVDH-yt-dlp。请先在 Chrome 中加载扩展，再重新运行安装程序。')
         root.destroy(); return
-    if not messagebox.askyesno('FreeVDH 安装', '是否安装 FreeVDH 的 yt-dlp 下载组件？'):
+    if not messagebox.askyesno('FreeVDH-yt-dlp 安装', '是否安装 FreeVDH-yt-dlp 桥接组件？'):
         return
     try:
         target = Path(os.environ['LOCALAPPDATA']) / 'FreeVDH-ytdlp'
@@ -112,12 +112,12 @@ def install():
         launcher = target / 'host.bat'
         launcher.write_text('@echo off\r\n"%~dp0freevdh-ytdlp.exe" --host\r\n', encoding='utf-8')
         manifest = target / 'host.json'
-        manifest.write_text(json.dumps({'name': NAME, 'description': 'FreeVDH yt-dlp host', 'path': str(launcher), 'type': 'stdio', 'allowed_origins': ['chrome-extension://' + extension_id + '/' for extension_id in extension_ids]}), encoding='utf-8')
+        manifest.write_text(json.dumps({'name': NAME, 'description': 'FreeVDH-yt-dlp host', 'path': str(launcher), 'type': 'stdio', 'allowed_origins': ['chrome-extension://' + extension_id + '/' for extension_id in extension_ids]}), encoding='utf-8')
         with winreg.CreateKey(winreg.HKEY_CURRENT_USER, r'Software\Google\Chrome\NativeMessagingHosts' + chr(92) + NAME) as key:
             winreg.SetValueEx(key, '', 0, winreg.REG_SZ, str(manifest))
-        messagebox.showinfo('FreeVDH 安装', '安装完成。请回到 FreeVDH 侧栏并点击重新检测。')
+        messagebox.showinfo('FreeVDH-yt-dlp 安装', '安装完成。请回到 FreeVDH-yt-dlp 侧栏并点击重新检测。')
     except Exception as exc:
-        messagebox.showerror('FreeVDH 安装失败', str(exc))
+        messagebox.showerror('FreeVDH-yt-dlp 安装失败', str(exc))
     root.destroy()
 
 if __name__ == '__main__':
