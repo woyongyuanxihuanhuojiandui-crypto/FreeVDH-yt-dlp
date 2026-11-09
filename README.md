@@ -29,9 +29,6 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 
 ![FreeVDH-yt-dlp 视频嗅探与下载界面](img/侧栏视频截图.png)
 
-### 插件设置界面
-
-![FreeVDH-yt-dlp 插件设置界面](img/侧栏设置截图.png)
 
 ## 下载与安装
 
