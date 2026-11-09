@@ -18,6 +18,7 @@ class SidebarUiTests(unittest.TestCase):
         translations = (ROOT / "content" / "translate.js").read_text(encoding="utf-8")
 
         self.assertEqual(manifest["name"], product)
+        self.assertEqual(manifest["version_name"], "1.0.0")
         self.assertEqual(manifest["action"]["default_title"], product)
         self.assertEqual(manifest["side_panel"]["default_title"], product)
         self.assertIn(f'button_show_translate: "协助翻译 {product}"', sidebar_ui)
