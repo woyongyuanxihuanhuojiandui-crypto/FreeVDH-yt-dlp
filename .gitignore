@@ -1,0 +1,9 @@
+*.exe
+*.dll
+*.zip
+*.7z
+*.rar
+*.pyc
+__pycache__/
+native-source/build/
+native-source/package-dist/
