@@ -8,7 +8,7 @@
   const playingCardsKey = "sidebarPlayingCards";
   let playingCards = [];
   const savePlayingCards = () => chrome.storage.session.set({ [playingCardsKey]: playingCards });
-  window.freeVDHPlayingCards = {
+  window.vcatchPlayingCards = {
     ready: chrome.storage.session.get({ [playingCardsKey]: [] }).then(value => {
       playingCards = value[playingCardsKey];
     }),
@@ -27,7 +27,7 @@
       savePlayingCards();
     },
   };
-  chrome.tabs.onRemoved.addListener(tabId => window.freeVDHPlayingCards.removeTab(tabId));
+  chrome.tabs.onRemoved.addListener(tabId => window.vcatchPlayingCards.removeTab(tabId));
 
   addStyle(document.head, `
     body {
@@ -92,7 +92,7 @@
   const header = document.createElement("header");
   header.id = "sidebar-page-header";
   header.innerHTML = `
-    <img src="/bitmaps/logo-128-nooutline.png" alt="FreeVDH-yt-dlp">
+    <img src="/bitmaps/logo-128-nooutline.png" alt="vcatch">
     <div id="sidebar-page-summary">
       <strong id="sidebar-current-count">当前页面 · 0</strong>
       <span id="sidebar-current-host"></span>
@@ -157,7 +157,7 @@
       button_show_history: "下载历史",
       button_show_dir: "打开下载文件夹",
       button_trash: "清除已完成下载",
-      button_show_translate: "协助翻译 FreeVDH-yt-dlp",
+      button_show_translate: "协助翻译 vcatch",
       button_help: "帮助",
       button_debug: "调试",
       toolbar_button_settings: "设置",
@@ -182,7 +182,7 @@
       font_size_verylarge: "特大",
       history_limit: "X 天后清除下载历史",
       leave_review_button: "撰写评价",
-      leave_review_description: "希望你喜欢 FreeVDH-yt-dlp :) 可以在扩展网站上留下好评吗？",
+      leave_review_description: "希望你喜欢 vcatch :) 可以在扩展网站上留下好评吗？",
       max_parallel_downloads: "最大并发下载数",
       media_discovered_ordering_title: "媒体排序方式",
       order_media_by_newest: "最新优先",
@@ -202,7 +202,7 @@
       private_browsing_button: "更改隐私浏览设置",
       private_browsing_notifications: "显示隐私下载通知",
       private_browsing_title: "隐私浏览",
-      private_browsing_warning: "FreeVDH-yt-dlp 尚未在隐私/无痕窗口中启用。需要手动开启该选项（并非必需）。",
+      private_browsing_warning: "vcatch 尚未在隐私/无痕窗口中启用。需要手动开启该选项（并非必需）。",
       reset_settings: "重置设置",
       restart_addon: "重新加载扩展",
       saveas_detected_warning: "检测到浏览器会在下载完成后显示“另存为”对话框，建议在浏览器设置中关闭该选项。",
@@ -334,7 +334,7 @@
     const targetTabId = card?.meta?.tab_id ?? tabId;
     if (targetTabId == null) return;
     const targetFrameId = frameIds.get(targetTabId) ?? 0;
-    const message = { channel: "freevdh-page-media", action, value };
+    const message = { channel: "vcatch-page-media", action, value };
     if (action !== "state") {
       chrome.tabs.sendMessage(targetTabId, message, { frameId: targetFrameId }, done);
       return;
@@ -368,10 +368,11 @@
     "--range-progress",
     `${Math.min(100, Number(input.value) / Math.max(1, Number(input.max)) * 100)}%`,
   );
-  const playbackSessionKey = "freevdhPlaybackSession";
+  const playbackSessionKey = "vcatchPlaybackSession";
   let playbackSession;
   let projectionCard;
   let projectionPeer;
+  let projectionClose = Promise.resolve();
   chrome.storage.session.get(playbackSessionKey).then(value => {
     playbackSession = value[playbackSessionKey];
     updatePresentation();
@@ -402,7 +403,7 @@
     projectionPeer = undefined;
     projectionCard = undefined;
     if (!card) return;
-    sendToCard(card, "projection-stop");
+    projectionClose = request(card, "projection-stop");
     card.sidebarStreamVideo.pause();
     card.sidebarStreamVideo.srcObject = null;
     card.sidebarStreamVideo.hidden = true;
@@ -422,6 +423,8 @@
   const openProjection = async card => {
     closeProjection();
     projectionCard = card;
+    await projectionClose;
+    if (projectionCard !== card || !shouldProject(card)) return;
     card.sidebarStreamFallback.hidden = true;
     const offer = await request(card, "projection-offer");
     if (projectionCard !== card || !shouldProject(card)) return;
@@ -481,7 +484,7 @@
   let dragging = false;
   let lastVolume = 1;
   const renderControls = state => {
-    if (!state.paused) window.freeVDHPlayingCards.add(activeCard.meta.tab_id, activeCard.id);
+    if (!state.paused) window.vcatchPlayingCards.add(activeCard.meta.tab_id, activeCard.id);
     activeCard.sidebarStateReady = true;
     updatePresentation();
     const play = controls.querySelector("#sidebar-play");
@@ -765,7 +768,7 @@
         closeProjection();
         activeCard = undefined;
       }
-      window.freeVDHPlayingCards.remove(card.meta.tab_id, card.id);
+      window.vcatchPlayingCards.remove(card.meta.tab_id, card.id);
     });
     select.onclick = event => event.stopPropagation();
     select.onchange = () => setCardOpen(card, select.checked);
@@ -818,7 +821,7 @@
     ytdlpDownload.textContent = "通过 yt-dlp 下载";
     ytdlpDownload.onclick = () => {
       ytdlpMenu.hidden = true;
-      window.freeVDHYtdlpDownload(card);
+      window.vcatchYtdlpDownload(card);
     };
     ytdlpMenu.append(ytdlpDownload);
     card.addEventListener("mouseleave", () => ytdlpMenu.hidden = true);
@@ -866,8 +869,8 @@
       () => ytdlpMenu.hidden = false,
     );
     const setDownloadRetention = retained => {
-      if (retained) window.freeVDHPlayingCards.add(card.meta.tab_id, card.id, "download");
-      else window.freeVDHPlayingCards.remove(card.meta.tab_id, card.id, "download");
+      if (retained) window.vcatchPlayingCards.add(card.meta.tab_id, card.id, "download");
+      else window.vcatchPlayingCards.remove(card.meta.tab_id, card.id, "download");
       dismiss.inert = retained;
     };
     card.sidebarSetDownloadIdle = () => {
@@ -1043,16 +1046,16 @@
       items.forEach((item, index) => {
         const record = records[index];
         const root = item.shadowRoot;
-        root.querySelector("#button_play").onclick = () => window.freeVDHYtdlpRequest({ action: "open", path: record.path });
-        root.querySelector("#button_not_playing").onclick = () => window.freeVDHYtdlpRequest({ action: "open", path: record.path });
-        root.querySelector("#button_dir").onclick = () => window.freeVDHYtdlpRequest({ action: "show", path: record.path });
-        root.querySelector("#button_rm").onclick = () => window.freeVDHYtdlpRequest({ action: "delete", path: record.path })
-          .then(() => window.freeVDHYtdlpHistory.remove(record.path));
+        root.querySelector("#button_play").onclick = () => window.vcatchYtdlpRequest({ action: "open", path: record.path });
+        root.querySelector("#button_not_playing").onclick = () => window.vcatchYtdlpRequest({ action: "open", path: record.path });
+        root.querySelector("#button_dir").onclick = () => window.vcatchYtdlpRequest({ action: "show", path: record.path });
+        root.querySelector("#button_rm").onclick = () => window.vcatchYtdlpRequest({ action: "delete", path: record.path })
+          .then(() => window.vcatchYtdlpHistory.remove(record.path));
       });
       syncCompletedVisibility();
     };
     const saveYtdlpHistory = () => chrome.storage.local.set({ sidebarYtdlpHistory: ytdlpHistory });
-    window.freeVDHYtdlpHistory = {
+    window.vcatchYtdlpHistory = {
       add: async record => {
         ytdlpHistory = ytdlpHistory.filter(item => item.path !== record.path);
         ytdlpHistory.push(record);
@@ -1074,7 +1077,7 @@
     new MutationObserver(syncCompletedVisibility).observe(downloaded, { attributes: true, attributeFilter: ["hidden"] });
     document.documentElement.addEventListener("persistent-changed", syncCompletedVisibility);
     customElements.whenDefined("com-toolbar").then(() =>
-      toolbar.shadowRoot.querySelector("#button_trash").addEventListener("click", window.freeVDHYtdlpHistory.clear));
+      toolbar.shadowRoot.querySelector("#button_trash").addEventListener("click", window.vcatchYtdlpHistory.clear));
     renderYtdlpHistory();
     const updateCards = () => {
       const cards = [...media.querySelectorAll("com-media")];
