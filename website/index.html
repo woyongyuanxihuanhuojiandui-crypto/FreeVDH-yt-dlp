@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vcatch｜网页视频下载扩展</title>
+  <meta name="description" content="vcatch 是 Chrome 网页视频下载扩展：在侧栏发现、预览和选择媒体，使用本地 yt-dlp 下载、FFmpeg 合并，轻松保存到电脑。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="vcatch｜网页视频下载扩展">
+  <meta property="og:description" content="在浏览器发现与预览视频，通过本地 yt-dlp 和 FFmpeg 下载、合并，保存到自己的电脑。">
+  <link rel="icon" type="image/png" href="assets/vcatch-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container navigation" aria-label="主导航">
+      <a class="brand" href="#top"><img src="assets/vcatch-logo.png" width="40" height="40" alt="vcatch 标志"><span>vcatch</span></a>
+      <ul class="nav-links">
+        <li><a href="#features">功能</a></li>
+        <li><a href="#how">原理</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#install">安装</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Chrome 网页视频下载扩展</p>
+        <h1 id="hero-title"><span>vcatch</span><br>网页视频，轻轻带回本地。</h1>
+        <p class="lead">在浏览器里发现视频、预览内容、选择画质，再交给电脑上的 yt-dlp 下载与 FFmpeg 合并。从网页到本地文件，在熟悉的侧栏里完成。</p>
+        <div class="hero-links"><a class="button secondary" href="#features">了解功能</a><a class="text-link" href="#install">查看安装指南</a></div>
+        <p class="hero-note">Windows 测试版 · Chrome 扩展 · 本地下载与合并</p>
+      </div>
+      <figure class="hero-preview">
+        <img src="assets/vcatch-sidebar.png" alt="vcatch 侧栏显示网页视频预览、画质选择和本地下载操作">
+        <figcaption>真实侧栏界面预览</figcaption>
+      </figure>
+    </section>
+
+    <section class="steps-section container" aria-labelledby="steps-title">
+      <p class="eyebrow">从发现到保存</p>
+      <h2 id="steps-title">三个步骤，留住想看的内容。</h2>
+      <ol class="steps">
+        <li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"></path></svg></span><h3>发现视频</h3><p>打开含有视频的网页并播放，让扩展发现页面加载的媒体资源。</p></li>
+        <li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4Z"></path><path d="m4 12 8 4 8-4M4 17l8 4 8-4"></path></svg></span><h3>预览与选择画质</h3><p>在侧栏确认视频内容，从可用的媒体资源或画质选项中选择。</p></li>
+        <li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 20h14"></path></svg></span><h3>保存到本地</h3><p>将下载交给本地工具；需要时由 FFmpeg 合并视频与音频。</p></li>
+      </ol>
+    </section>
+
+    <section id="features" class="features-section container" aria-labelledby="features-title">
+      <p class="eyebrow">围绕下载，恰到好处</p>
+      <h2 id="features-title">浏览器负责发现，本地工具负责保存。</h2>
+      <ul class="feature-grid">
+        <li><h3>网页媒体发现</h3><p>发现网页播放过程中加载的媒体资源，在侧栏集中查看候选内容。</p></li>
+        <li><h3>侧栏媒体预览</h3><p>在当前页面旁预览媒体，确认内容后再选择可用画质，减少来回切换。</p></li>
+        <li><h3>yt-dlp 下载增强</h3><p>通过本地桥接调用 yt-dlp，补充站点解析与下载能力；实际支持取决于站点与资源状态。</p></li>
+        <li><h3>FFmpeg 本地合并</h3><p>对于分离的视频与音频，使用本机 FFmpeg 合并，文件保存在自己的电脑上。</p></li>
+      </ul>
+    </section>
+
+    <section id="how" class="how-section container" aria-labelledby="how-title">
+      <div class="section-intro"><p class="eyebrow">各司其职，流程更顺</p><h2 id="how-title">熟悉的浏览器，加上本地下载工具。</h2></div>
+      <div class="how-content">
+        <h3>vcatch：把网页媒体带到眼前</h3>
+        <p>扩展运行在 Chrome 中，负责发现网页媒体、展示资源、预览内容与发起下载。它提供操作入口，并通过桥接程序连接本地工具。</p>
+        <h3>yt-dlp + FFmpeg：在电脑上完成下载与合并</h3>
+        <p>yt-dlp 提供更广的站点解析和下载支持，FFmpeg 负责需要的音视频合并。下载与合并在本机执行，媒体仍从来源站点获取；站点限制、登录状态和内容保护会影响可用性。</p>
+      </div>
+    </section>
+
+    <section class="interface-section container" aria-labelledby="interface-title">
+      <p class="eyebrow">打开侧栏，就在手边</p>
+      <h2 id="interface-title">看得见内容，也找得到资源。</h2>
+      <div class="interface-grid">
+        <figure><img src="assets/vcatch-sidebar.png" alt="vcatch 视频侧栏预览界面，展示视频画面与下载选项" loading="lazy"><figcaption>侧栏预览：先确认视频，再选择保存方式。</figcaption></figure>
+        <figure><img src="assets/vcatch-resource-list.png" alt="vcatch 网页媒体资源列表，集中展示发现的媒体条目" loading="lazy"><figcaption>资源列表：集中浏览网页中发现的媒体。</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section container" aria-labelledby="faq-title">
+      <p class="eyebrow">开始前，先了解</p>
+      <h2 id="faq-title">常见问题</h2>
+      <div class="faq-list">
+        <details><summary>vcatch 是什么？</summary><p>它是一款面向 Chrome 的网页视频下载扩展，将网页媒体发现与侧栏预览，和本地 yt-dlp、FFmpeg 工具连接起来，帮助你保存有权下载的内容。</p></details>
+        <details><summary>为什么要结合 yt-dlp？</summary><p>网页资源发现和站点解析各有适用场景。yt-dlp 补充站点解析、画质选择与下载能力，FFmpeg 处理需要合并的音视频，让扩展能够使用本地工具完成后续工作。</p></details>
+        <details><summary>支持哪些网站？能下载所有视频吗？</summary><p>可以尝试扩展发现的网页媒体，以及 yt-dlp 支持的站点。并非每个网站或视频都能下载：站点更新、登录权限、资源有效期和内容保护都可能限制下载，不承诺支持所有网站或受 DRM 保护的内容。</p></details>
+        <details><summary>需要预先安装 Python、yt-dlp 或 FFmpeg 吗？</summary><p>不需要。Windows 测试版安装包已包含所需运行环境和工具，解压后按安装教程加载扩展并安装本地桥接即可。</p></details>
+        <details><summary>下载的文件保存在哪里？默认是什么格式？</summary><p>Windows 测试版默认保存到当前用户的 Downloads（下载）文件夹，默认输出 MP4。最终可用画质与音视频内容取决于来源资源。</p></details>
+        <details><summary>下载时需要注意什么版权与授权限制？</summary><p>请只下载你拥有版权、已获授权或允许下载的内容，并遵守来源网站的使用条款。扩展不提供绕过访问权限或内容保护的授权。</p></details>
+      </div>
+    </section>
+
+    <section id="install" class="install-section container" aria-labelledby="install-title">
+      <p class="eyebrow">Windows 测试版</p>
+      <h2 id="install-title">安装教程</h2>
+      <p>准备好 Chrome，按顺序完成扩展与本地桥接安装。</p>
+      <ol class="install-steps">
+        <li><h3>下载并解压</h3><p>通过页面底部的下载入口获取 Windows 测试版，将压缩包完整解压到本地文件夹。</p></li>
+        <li><h3>加载 Chrome 扩展</h3><p>打开 Chrome 的“扩展程序 → 管理扩展程序”，开启“开发者模式”，点击“加载已解压的扩展程序”，选择包含 manifest.json 的扩展文件夹。</p></li>
+        <li><h3>运行桥接安装程序</h3><p>运行解压目录中的本地桥接安装程序，按提示完成配置，让浏览器能调用电脑上的下载与合并工具。</p></li>
+        <li><h3>打开侧栏开始使用</h3><p>进入视频网页并播放内容，打开 vcatch 侧栏，预览、选择画质，然后保存到本地。</p></li>
+      </ol>
+      <p class="install-note">Windows 可能显示安全提示。请先确认文件来自本页所链接的官方仓库发布页，再决定是否允许运行。</p>
+    </section>
+
+    <section id="download" class="download-section container" aria-labelledby="download-title">
+      <p class="eyebrow">让好内容，随时可看</p>
+      <h2 id="download-title">准备好保存第一个视频了吗？</h2>
+      <p>从 Windows 测试版开始，连接 Chrome 与本地下载工具。</p>
+      <div class="download-actions"><a class="button primary" href="https://github.com/woyongyuanxihuanhuojiandui-crypto/vcatch/releases/download/v1.0.0/vcatch.zip">下载 Windows 测试版</a><a class="text-link" href="#install">查看安装指南</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>vcatch · 网页发现，本地保存。</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/woyongyuanxihuanhuojiandui-crypto/vcatch">源码仓库</a></li>
+      <li><a href="https://github.com/woyongyuanxihuanhuojiandui-crypto/vcatch/releases">版本发布</a></li>
+      <li><a href="https://github.com/woyongyuanxihuanhuojiandui-crypto/vcatch/issues">问题反馈</a></li>
+      <li><a href="https://github.com/woyongyuanxihuanhuojiandui-crypto/vcatch/blob/main/LICENSE">开源许可</a></li>
+    </ul>
+    <p>请仅保存拥有版权或已获授权的内容。</p>
+  </footer>
+</body>
+</html>
