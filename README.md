@@ -1,12 +1,14 @@
-# FreeVDH-yt-dlp
+# vcatch
 
 **免费 Chrome 视频下载插件 | yt-dlp | 媒体资源嗅探 | 内置视频播放器**
 
-FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基于 [FreeVDH](https://github.com/Atamol/FreeVDH) 开发，参考 [CatCatch（猫抓）](https://github.com/xifangczy/cat-catch) 的媒体资源嗅探功能，并集成 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 下载引擎和媒体播放功能。
+vcatch 是一款免费的 Google Chrome 网页视频下载扩展，基于 [FreeVDH](https://github.com/Atamol/FreeVDH) 开发，参考 [CatCatch（猫抓）](https://github.com/xifangczy/cat-catch) 的媒体资源嗅探功能，并集成 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 下载引擎和媒体播放功能。
 
 项目将**视频嗅探、在线播放和视频下载**整合到浏览器扩展中，让用户无需学习复杂的命令行操作，就能更加方便地发现、播放和下载网页视频。
 
 **项目目标：免费、简单、易于使用，尽量减少额外配置。**
+
+项目网站：[https://vcatchv1.netlify.app](https://vcatchv1.netlify.app)
 
 ## 核心功能
 
@@ -16,7 +18,7 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 | 媒体资源嗅探 | 自动发现并列出网页中的媒体资源 |
 | 内置媒体播放器 | 直接播放支持的视频资源 |
 | yt-dlp 下载引擎 | 通过本地桥接组件调用 yt-dlp 执行下载 |
-| 多下载引擎 | 结合 FreeVDH 原生下载与 yt-dlp 的解析能力 |
+| 多下载引擎 | 结合扩展内置下载与 yt-dlp 的解析能力 |
 | 图形化操作 | 无需手动输入 yt-dlp 命令 |
 | Chrome 浏览器支持 | 以 Chrome 扩展形式提供功能 |
 | 免费使用 | 免费提供核心视频下载及媒体播放功能 |
@@ -27,12 +29,11 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 
 ### 视频嗅探与下载
 
-![FreeVDH-yt-dlp 视频嗅探与下载界面](img/侧栏视频截图.png)
-
+![vcatch 视频嗅探与下载界面](img/侧栏视频截图.png)
 
 ## 下载与安装
 
-**[点击前往 GitHub Releases 下载 FreeVDH-yt-dlp](../../releases/latest)**
+**[点击前往 GitHub Releases 下载 vcatch](../../releases/latest)**
 
 安装步骤：
 
@@ -40,14 +41,14 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 2. 下载 ZIP 压缩包。
 3. 解压压缩包。
 4. 打开 Chrome 扩展程序管理页面（`chrome://extensions`），启用**开发者模式**，点击 **“加载未打包的扩展程序”**。
-5. 选择解压好的 **FreeVDH-yt-dlp** 文件夹。
-6. 双击文件夹内的 **“安装 FreeVDH yt-dlp 桥接组件”**，完成桥接组件安装。
+5. 选择解压好的 **vcatch** 文件夹。
+6. 双击文件夹内的 **“安装 vcatch yt-dlp 桥接组件”**，完成桥接组件安装。
 
 特别提示：桥接组件已内置 yt-dlp 下载引擎，用户无需单独下载或配置 yt-dlp。
 
 ### 为什么需要安装桥接组件？
 
-**FreeVDH yt-dlp 桥接组件用于连接 Chrome 浏览器扩展与电脑本地的 yt-dlp 下载程序。**
+**vcatch yt-dlp 桥接组件用于连接 Chrome 浏览器扩展与电脑本地的 yt-dlp 下载程序。**
 
 由于 Chrome 浏览器的安全限制，浏览器扩展无法直接执行本地 yt-dlp 程序，因此需要通过桥接组件完成通信。
 
@@ -57,9 +58,9 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 - **执行下载任务**：将需要 yt-dlp 处理的视频下载任务交给本地程序。
 - **简化使用流程**：用户无需手动打开终端或输入 yt-dlp 下载命令。
 
-**注意：** 桥接组件是使用 yt-dlp 下载功能所必需的配套组件。FreeVDH 原生下载功能与 yt-dlp 下载功能是不同的下载方式，并非所有下载操作都需要调用 yt-dlp。
+**注意：** 桥接组件是使用 yt-dlp 下载功能所必需的配套组件。扩展内置下载与 yt-dlp 下载是不同的下载方式，并非所有下载操作都需要调用 yt-dlp。
 
-## 为什么开发 FreeVDH-yt-dlp？
+## 为什么开发 vcatch？
 
 目前已有许多网页视频下载工具，但不同工具在操作方式、媒体检测能力和网站兼容性方面存在差异。
 
@@ -69,13 +70,13 @@ FreeVDH-yt-dlp 是一款免费的 Google Chrome 网页视频下载扩展，基�
 - **CatCatch（猫抓）** 提供网页媒体资源嗅探能力。
 - **yt-dlp** 支持大量视频网站，具有独立的网站解析和下载能力，但主要通过命令行使用。
 
-FreeVDH-yt-dlp 的开发目标不是重新实现已有的下载引擎，而是充分利用这些成熟项目的优势。
+vcatch 的开发目标不是重新实现已有的下载引擎，而是充分利用这些成熟项目的优势。
 
 通过整合浏览器视频下载、媒体嗅探、内置播放与 yt-dlp 下载能力，为用户提供更加便捷的网页视频处理工具。
 
 ## 适合哪些用户？
 
-FreeVDH-yt-dlp 适合：
+vcatch 适合：
 
 - 想寻找免费 Chrome 视频下载插件的用户。
 - 希望在浏览器中直接检测和下载网页视频的用户。
@@ -86,17 +87,17 @@ FreeVDH-yt-dlp 适合：
 
 ## 常见问题 FAQ
 
-### 1. FreeVDH-yt-dlp 是什么？
+### 1. vcatch 是什么？
 
-FreeVDH-yt-dlp 是一款基于 FreeVDH 开发的免费 Chrome 视频下载扩展，结合媒体资源嗅探、内置媒体播放和 yt-dlp 下载引擎，让用户可以通过浏览器完成网页视频的发现、播放与下载。
+vcatch 是一款基于 FreeVDH 开发的免费 Chrome 视频下载扩展，结合媒体资源嗅探、内置媒体播放和 yt-dlp 下载引擎，让用户可以通过浏览器完成网页视频的发现、播放与下载。
 
-### 2. FreeVDH 已经能下载 YouTube 视频，为什么还要集成 yt-dlp？
+### 2. 扩展已经能下载 YouTube 视频，为什么还要集成 yt-dlp？
 
 两者的下载机制不同，具有一定的互补性。
 
-FreeVDH 主要通过浏览器检测和下载视频，而 yt-dlp 具有独立的网站解析能力，可作为备用及增强下载引擎，帮助处理部分下载失败、复杂视频格式及网站兼容性问题。
+扩展内置下载主要通过浏览器检测和下载视频，而 yt-dlp 具有独立的网站解析能力，可作为备用及增强下载引擎，帮助处理部分下载失败、复杂视频格式及网站兼容性问题。
 
-**集成 yt-dlp 的目的不是重复 FreeVDH 已有的功能，而是提供额外的下载途径，提高工具的适用范围。**
+**集成 yt-dlp 的目的是提供额外的下载途径，提高工具的适用范围。**
 
 ### 3. yt-dlp 必须通过命令行使用吗？
 
@@ -104,37 +105,37 @@ FreeVDH 主要通过浏览器检测和下载视频，而 yt-dlp 具有独立的�
 
 yt-dlp 本身主要通过命令行操作，但可以由其他程序调用。
 
-FreeVDH-yt-dlp 通过 Chrome 扩展和本地桥接组件调用 yt-dlp，让用户可以通过图形化界面执行下载任务，无需手动输入命令。
+vcatch 通过 Chrome 扩展和本地桥接组件调用 yt-dlp，让用户可以通过图形化界面执行下载任务，无需手动输入命令。
 
-### 4. FreeVDH-yt-dlp 支持媒体播放吗？
+### 4. vcatch 支持媒体播放吗？
 
 支持。
 
-FreeVDH-yt-dlp 集成了内置媒体播放器，可以播放支持的视频资源。
+vcatch 集成了内置媒体播放器，可以播放支持的视频资源。
 
 用户可以先通过媒体嗅探功能发现视频，再使用播放器查看内容，无需每次都先下载视频文件。
 
 实际播放能力取决于媒体格式及浏览器支持情况。
 
-### 5. FreeVDH-yt-dlp 可以下载 YouTube 视频吗？
+### 5. vcatch 可以下载 YouTube 视频吗？
 
-FreeVDH 和 yt-dlp 均具有 YouTube 视频下载能力。
+扩展内置下载和 yt-dlp 均具有 YouTube 视频下载能力。
 
-FreeVDH-yt-dlp 整合了两者的下载方式，但实际下载能力取决于软件版本、网站变化以及视频格式。
+vcatch 整合了两种下载方式，但实际下载能力取决于软件版本、网站变化以及视频格式。
 
 不能保证所有 YouTube 视频均能成功下载。
 
-### 6. FreeVDH-yt-dlp 与 Video DownloadHelper 有什么关系？
+### 6. vcatch 与 Video DownloadHelper 有什么关系？
 
-FreeVDH-yt-dlp 基于 FreeVDH 项目开发。
+vcatch 基于 FreeVDH 项目开发。
 
-FreeVDH 的项目说明指出，其是在 Video DownloadHelper 基础上修改的版本。因此，FreeVDH-yt-dlp 与 Video DownloadHelper 存在间接的技术来源关系。
+FreeVDH 的项目说明指出，其是在 Video DownloadHelper 基础上修改的版本。因此，vcatch 与 Video DownloadHelper 存在间接的技术来源关系。
 
 本项目不是 Video DownloadHelper 官方产品，与其开发团队不存在隶属或合作关系。
 
-### 7. FreeVDH-yt-dlp 与普通视频下载插件有什么区别？
+### 7. vcatch 与普通视频下载插件有什么区别？
 
-FreeVDH-yt-dlp 不仅提供网页视频检测与下载功能，还整合了媒体资源嗅探、内置播放和 yt-dlp 下载能力。
+vcatch 不仅提供网页视频检测与下载功能，还整合了媒体资源嗅探、内置播放和 yt-dlp 下载能力。
 
 用户可以在同一款 Chrome 扩展中发现、播放和下载视频，并根据实际支持情况使用不同的下载方式。
 
@@ -148,7 +149,7 @@ FreeVDH-yt-dlp 不仅提供网页视频检测与下载功能，还整合了媒�
 
 ## 技术来源与致谢
 
-FreeVDH-yt-dlp 基于现有项目进行开发，并参考成熟工具的设计与实现。
+vcatch 基于现有项目进行开发，并参考成熟工具的设计与实现。
 
 感谢以下项目及其开发者：
 
@@ -163,13 +164,13 @@ FreeVDH-yt-dlp 基于现有项目进行开发，并参考成熟工具的设计�
 
 **项目来源说明：**
 
-FreeVDH 官方仓库声明其基于 Video DownloadHelper 修改。FreeVDH-yt-dlp 基于 FreeVDH 继续开发，但不属于 Video DownloadHelper 官方项目。
+FreeVDH 官方仓库声明其基于 Video DownloadHelper 修改。vcatch 基于 FreeVDH 继续开发，但不属于 Video DownloadHelper 官方项目。
 
 第三方代码、组件及相关资源的使用与再分发，应遵守各自适用的版权声明和许可证。
 
 ## 项目反馈
 
-FreeVDH-yt-dlp 将持续完善网页视频下载、媒体资源嗅探及播放体验。
+vcatch 将持续完善网页视频下载、媒体资源嗅探及播放体验。
 
 - **项目下载**：[GitHub Releases](../../releases/latest)
 - **问题反馈**：[GitHub Issues](../../issues)
@@ -185,4 +186,4 @@ FreeVDH-yt-dlp 将持续完善网页视频下载、媒体资源嗅探及播放�
 
 ---
 
-**FreeVDH-yt-dlp — 让网页视频的发现、播放和下载更简单。**
+**vcatch — 让网页视频的发现、播放和下载更简单。**
